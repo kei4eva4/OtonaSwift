@@ -1,0 +1,27 @@
+{
+    "name": "otonaswift",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "dependencies": {
+        "gitbook-plugin-image-class": "^1.0.5",
+        "gitbook-plugin-hide-published-with": "^1.0.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kei4eva4/OtonaSwift.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kei4eva4/OtonaSwift/issues"
+    },
+    "homepage": "https://github.com/kei4eva4/OtonaSwift#readme"
+}
