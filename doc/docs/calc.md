@@ -15,7 +15,9 @@
 ![/images/calc/calc3.jpg](/images/calc/calc3.jpg)
 
 ## CocoaPodsでライブラリをインストール
+
 - 一度Xcodeを終了し、ターミナルを起動して下記コマンドにてCocoapodsをインストールする
+
 ```
 $ sudo gem install cocoapods
 $ pod setup
@@ -23,13 +25,15 @@ $ pod --version
 ```
 
 - CocoaPodsのインストールが完了したら、先ほど作成したプロジェクトのルートに移動してPodfileを作成する
+
 ```
 $ cd /path/to/XcodeProject/CalculatorApp
 $ pod init
 ```
 
 - Podfileを下記のように編集する
-- 「Expression」は、電卓に入力された文字列をSwiftコードとして評価するために使う
+- 「Expression」は、電卓に入力された文字列をSwiftコードとして評価するために使う 
+
 ```
 platform :ios, '9.0'
 
@@ -38,38 +42,49 @@ target 'CalculatorApp' do
   pod 'Expression'
 end
 ```
+
 ![/images/calc/calc4.jpg](/images/calc/calc4.jpg)
 
 - インストールが成功したらCalculatorApp.xcworkspaceが作成されるので、これをXcodeプロジェクトとして開く
+
 ```
 $ open CalculatorApp.xcworkspace
 ```
 
 ## 起動確認
+
 - デバイスを選択し、Runする
+
 ![/images/calc/calc5.jpg](/images/calc/calc5.jpg)
 
 ## UIの作成
 - Main.storyboardを開く
 - Library一覧から[Label]を選択し、ViewControllerの上にドラッグアンドドロップする
+
 ![/images/calc/calc6.jpg](/images/calc/calc6.jpg)
 
 - Atrribute Inspectorを開き、ラベルのテキストを編集する
+
 ![/images/calc/calc7.jpg](/images/calc/calc7.jpg)
 
 - 同じ手順で「=」と「答え用のラベル」も追加する
+
 ![/images/calc/calc8.jpg](/images/calc/calc8.jpg)
 
 - Library一覧から[Button]を選択し、ViewControllerの上にドラッグアンドドロップする
+
 ![/images/calc/calc9.jpg](/images/calc/calc9.jpg)
 
 - Atrribute Inspectorを開き、ボタンのテキストと背景色を編集する
+
 ![/images/calc/calc10.jpg](/images/calc/calc10.jpg)
 
 - 同じ手順で他のボタンも追加する
+
 ![/images/calc/calc11.jpg](/images/calc/calc11.jpg)
 
 - [Run]して、ボタントラベルが正しく表示されていたらUIはこれで完了
+
 ![/images/calc/calc12.jpg](/images/calc/calc12.jpg)
 
 ## Outlet接続
