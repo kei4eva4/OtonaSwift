@@ -1,10 +1,4 @@
-# Swiftを書くための環境構築
-
-## 動作環境
-- 1. ターミナルのREPL
-- 2. XcodeのPlayground
-- 3. Repl.it
-https://repl.it/
+# 参考資料／今後の手引き
 
 
 https://developers-jp.googleblog.com/2018/05/introducing-swift-for-tensorflow-b75722c58df0.html

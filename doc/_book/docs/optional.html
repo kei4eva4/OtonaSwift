@@ -1,0 +1,400 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Swiftの文法②Optional · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="calc.html" />
+    
+    
+    <link rel="prev" href="grammar.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Swiftの紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="grammar.html">
+            
+                <a href="grammar.html">
+            
+                    
+                    Swiftの文法①基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="optional.html">
+            
+                <a href="optional.html">
+            
+                    
+                    Swiftの文法②Optional
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="calc.html">
+            
+                <a href="calc.html">
+            
+                    
+                    iOSアプリチュートリアル①電卓アプリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="oop.html">
+            
+                <a href="oop.html">
+            
+                    
+                    オブジェクト指向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="protocol.html">
+            
+                <a href="protocol.html">
+            
+                    
+                    プロトコル指向
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Swiftの文法②Optional</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="swift&#x306E;&#x6587;&#x6CD5;&#x2461;optional">Swift&#x306E;&#x6587;&#x6CD5;&#x2461;Optional</h1><ul><li>Swift&#x306E;&#x8A00;&#x8A9E;&#x4ED5;&#x69D8;&#x306E;&#x7279;&#x5FB4;&#x3068;&#x3057;&#x3066;&#x3001;nil&#x3092;&#x5B89;&#x5168;&#x306B;&#x6271;&#x3046;&#x305F;&#x3081;&#x306B;Optional&#x3068;&#x3044;&#x3046;&#x578B;&#x304C;&#x5B58;&#x5728;&#x3057;&#x307E;&#x3059;&#x3002;
+</li>
+<li>nil&#x3092;&#x8A31;&#x5BB9;&#x3059;&#x308B;&#x5909;&#x6570;&#x306F;&#x3001;Optional&#x578B;&#x3068;&#x3057;&#x3066;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+</li>
+<li>&#x5909;&#x6570;&#x3092;Optional&#x578B;&#x3067;&#x5B9A;&#x7FA9;&#x3057;&#x306A;&#x3044;&#x9650;&#x308A;&#x3001;&#x5909;&#x6570;&#x306B;nil&#x3092;&#x4EE3;&#x5165;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+</li>
+<li><p>&#x975E;Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x3001;&#x305F;&#x3068;&#x3048;&#x3070;&#x901A;&#x5E38;&#x306E;Int&#x578B;&#x3084;String&#x578B;&#x306E;&#x5909;&#x6570;&#x306B;&#x306F;&#x3001;nil&#x3092;&#x4EE3;&#x5165;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p></li>
+<li><p>Optional&#x578B;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x5909;&#x6570;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x623B;&#x308A;&#x5024;&#x304C;nil&#x306B;&#x306A;&#x308A;&#x5F97;&#x308B;&#x3053;&#x3068;&#x3092;&#x3001;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DE;&#x304C;&#x660E;&#x793A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p></li>
+<li><p>&#x4E0D;&#x9069;&#x5207;&#x306B;nil&#x306E;&#x53EF;&#x80FD;&#x6027;&#x306E;&#x3042;&#x308B;&#x5909;&#x6570;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x305F;&#x5834;&#x5408;&#x3001;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x6642;&#x306B;&#x8B66;&#x544A;&#x304C;&#x51FA;&#x3066;&#x3001;nil&#x304C;&#x8FD4;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308B;&#x4E88;&#x671F;&#x305B;&#x306C;&#x5B9F;&#x884C;&#x6642;&#x30A8;&#x30E9;&#x30FC;&#x306E;&#x767A;&#x751F;&#x3092;&#x9632;&#x3050;&#x50CD;&#x304D;&#x3092;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x308F;&#x3051;&#x3067;&#x3059;&#x3002;</p></li></ul>
+<h2 id="optional&#x578B;&#x306E;&#x5B9A;&#x7FA9;">Optional&#x578B;&#x306E;&#x5B9A;&#x7FA9;</h2><pre><code class="lang-swift"><span class="hljs-comment">// Optional Int</span>
+<span class="hljs-keyword">var</span> optionalInt: <span class="hljs-type">Int</span>? = <span class="hljs-number">5</span>
+<span class="hljs-comment">// &#x901A;&#x5E38;&#x306E;Int</span>
+<span class="hljs-keyword">var</span> int: <span class="hljs-type">Int</span> = <span class="hljs-number">5</span>
+
+<span class="hljs-comment">// Optional String</span>
+<span class="hljs-keyword">var</span> optionalStr: <span class="hljs-type">String</span>? = <span class="hljs-string">&quot;hello&quot;</span>
+<span class="hljs-comment">// &#x901A;&#x5E38;&#x306E;String</span>
+<span class="hljs-keyword">var</span> str: <span class="hljs-type">String</span> = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-comment">// Optional String&#x306E;&#x5909;&#x6570;&#x306B;nil&#x3092;&#x4EE3;&#x5165;</span>
+optionalStr = <span class="hljs-literal">nil</span>
+<span class="hljs-comment">// &#x901A;&#x5E38;&#x306E;String&#x306B;&#x306F;nil&#x3092;&#x4EE3;&#x5165;&#x3067;&#x304D;&#x306A;&#x3044;</span>
+str = <span class="hljs-literal">nil</span>  <span class="hljs-comment">// =&gt; error: nil cannot be assigned to type &apos;String&apos;</span></code></pre>
+<ul><li>Int?&#x306F;nil&#x307E;&#x305F;&#x306F;Int&#x578B;&#x306E;&#x5024;&#x3092;&#x4EE3;&#x5165;&#x3067;&#x304D;&#x308B;&#x578B;&#x3001;String?&#x306F;nil&#x307E;&#x305F;&#x306F;String&#x578B;&#x306E;&#x5024;&#x3092;&#x4EE3;&#x5165;&#x3067;&#x304D;&#x308B;&#x578B;&#x3067;&#x3059;&#x3002;Int?&#x3068;Int&#x306F;&#x307E;&#x3063;&#x305F;&#x304F;&#x5225;&#x306E;&#x578B;&#x3067;&#x3042;&#x308A;&#x3001;&#x540C;&#x69D8;&#x306B;String?&#x3068;String&#x3082;&#x307E;&#x3063;&#x305F;&#x304F;&#x5225;&#x306E;&#x578B;&#x3067;&#x3059;&#x3002;
+</li>
+<li>T?&#x3068;&#x3044;&#x3046;&#x66F8;&#x304D;&#x65B9;&#x306F;&#x3001;Optional<t>&#x306E;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x30B7;&#x30E5;&#x30AC;&#x30FC;
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> optionalInt: <span class="hljs-type">Optional</span>&lt;<span class="hljs-type">Int</span>&gt; = <span class="hljs-number">5</span> <span class="hljs-comment">//Int?&#x3068;&#x540C;&#x3058;</span>
+<span class="hljs-keyword">var</span> optionalStr: <span class="hljs-type">Optional</span>&lt;<span class="hljs-type">String</span>&gt; = <span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-comment">// String?&#x3068;&#x540C;&#x3058;</span></code></pre>
+</t></li></ul>
+<h2 id="optional&#x578B;&#x306E;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;">Optional&#x578B;&#x306E;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;</h2><ul><li>Swift&#x3067;&#x306F;&#x3001;Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x3092; &#x30E9;&#x30C3;&#x30D7;&#xFF08;wrap&#xFF09;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x8868;&#x73FE;&#x3057;&#x307E;&#x3059;&#x3002;
+</li>
+<li>&#x4E00;&#x65B9;&#x3001;&#x5024;&#x3092;&#x6271;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x51E6;&#x7406;&#x3092;&#x3001;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#xFF08;unwrap&#xFF09;&#x3059;&#x308B;&#x3068;&#x8868;&#x73FE;&#x3057;&#x307E;&#x3059;&#x3002;
+</li>
+<li>&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x305B;&#x305A;&#x306B;&#x3001;Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x305D;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;&#x5909;&#x6570;&#x304C;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x3088;&#xFF01; &#x3068;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x307E;&#x3059;&#x3002;
+</li></ul>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> optionalStr: <span class="hljs-type">String</span>? = <span class="hljs-string">&quot;hello&quot;</span>
+optionalStr.uppercased()  <span class="hljs-comment">// =&gt; error: value of optional type &apos;String?&apos; not unwrapped</span></code></pre>
+<ul><li>Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x3092;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x51E6;&#x7406;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;4&#x3064;&#x306E;&#x65B9;&#x6CD5;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+</li></ul>
+<h3 id="1-optional-binding">1. Optional Binding</h3><ul><li>if&#x3084;guard&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x304C;nil&#x3067;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x3059;&#x308B;
+</li>
+<li>guard&#x306F;&#x95A2;&#x6570;&#x306E;&#x4E2D;&#x3067;&#x3057;&#x304B;&#x4F7F;&#x3048;&#x306A;&#x3044;
+<ul><li>Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x304C;nil&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#x306E;&#x51E6;&#x7406;&#x3092;&#x3001;else&#x5185;&#x306B;&#x66F8;&#x304F; 
+</li>
+<li>Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x304C;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x3067;&#x304D;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x4EE5;&#x964D;&#x306E;&#x884C;&#x3067;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x6E08;&#x307F;&#x306E;&#x5909;&#x6570;&#x3092;&#x4F7F;&#x3048;&#x308B;
+</li></ul>
+</li></ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span></span> -&gt; <span class="hljs-type">String</span> {
+  <span class="hljs-keyword">let</span> optionalStr: <span class="hljs-type">String</span>? = <span class="hljs-string">&quot;hello&quot;</span>
+  <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> unwrappedStr = optionalStr {
+    <span class="hljs-keyword">return</span> unwrappedStr.uppercased()
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>
+}
+
+<span class="hljs-built_in">print</span>( hello() )  <span class="hljs-comment">// =&gt; HELLO</span></code></pre>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">helloWithGuard</span><span class="hljs-params">()</span></span> -&gt; <span class="hljs-type">String</span> {
+  <span class="hljs-keyword">let</span> optionalStr: <span class="hljs-type">String</span>? = <span class="hljs-string">&quot;hello&quot;</span>
+  <span class="hljs-keyword">guard</span> <span class="hljs-keyword">let</span> unwrappedStr = optionalStr <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>
+  }
+  <span class="hljs-keyword">return</span> unwrappedStr.uppercased()
+}
+
+<span class="hljs-built_in">print</span>( helloWithGuard() )  <span class="hljs-comment">// =&gt; HELLO</span></code></pre>
+<h3 id="2-optional-chaining">2. Optional Chaining</h3><ul><li>Optional Chaining&#x306F;&#x3001;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x3057;&#x305F;&#x5909;&#x6570;&#x306E;&#x578B;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306B;&#x4F7F;&#x3046;&#x65B9;&#x6CD5;
+</li></ul>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> optionalStr: <span class="hljs-type">String</span>?
+optionalStr?.uppercased()  <span class="hljs-comment">// =&gt; nil</span>
+optionalStr = <span class="hljs-string">&quot;hello&quot;</span>
+optionalStr?.uppercased()  <span class="hljs-comment">// =&gt; &quot;HELLO&quot;</span></code></pre>
+<pre><code class="lang-swift"><span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> userName = user?.profile?.name {
+  <span class="hljs-built_in">print</span>(userName)
+}</code></pre>
+<h3 id="3-forced-unwrapping">3. Forced Unwrapping</h3><ul><li>Forced Unwrapping&#x3068;&#x306F;&#x3001;&#x6587;&#x5B57;&#x901A;&#x308A;&#x5F37;&#x5236;&#x7684;&#x306B;&#x30A2;&#x30F3;&#x30E9;&#x30C3;&#x30D7;&#x3092;&#x884C;&#x3046;&#x65B9;&#x6CD5;
+</li>
+<li>Optional&#x578B;&#x306E;&#x5909;&#x6570;&#x304C;nil&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#x306B;Forced Unwrapping&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x3001;&#x30E9;&#x30F3;&#x30BF;&#x30A4;&#x30E0;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8D77;&#x3053;&#x308B;&#xFF08;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x5834;&#x5408;&#x3060;&#x3063;&#x305F;&#x3089;&#x843D;&#x3061;&#x308B;&#xFF09;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> optionalStr: <span class="hljs-type">String</span>? = <span class="hljs-string">&quot;hello&quot;</span>
+optionalStr!.uppercased()  <span class="hljs-comment">// =&gt; HELLO</span></code></pre>
+</li></ul>
+<h3 id="4-implicitlyunwrappedoptional&#x578B;">4. ImplicitlyUnwrappedOptional&#x578B;</h3><ul><li>nil&#x304C;&#x4EE3;&#x5165;&#x53EF;&#x80FD;&#x306A;&#x5909;&#x6570;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x578B;&#x3068;&#x3057;&#x3066;&#x3001;ImplicitlyUnwrappedOptional&#x578B;&#x304C;&#x3042;&#x308B;
+</li>
+<li>ImplicitlyUnwrappedOptional&#x578B;&#x306E;&#x5909;&#x6570;&#x306F;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x547C;&#x3073;&#x51FA;&#x3057;&#x306E;&#x969B;&#x306B;&#x3001;&#x901A;&#x5E38;&#x306E;&#x578B;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306A;&#x547C;&#x3073;&#x51FA;&#x3057;&#x65B9;&#x3067;&#x66F8;&#x3051;&#x308B;
+</li>
+<li>&#x305F;&#x3060;&#x3057;&#x3001;Forced Unwrapping&#x3068;&#x540C;&#x69D8;&#x306B;&#x3001;ImplicitlyUnwrappedOptional&#x578B;&#x306E;&#x5909;&#x6570;&#x304C;nil&#x306E;&#x5834;&#x5408;&#x3001;&#x5B9F;&#x884C;&#x6642;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;
+</li></ul>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> implicitlyStr: <span class="hljs-type">String</span>!  <span class="hljs-comment">// nil</span>
+implicitlyStr = <span class="hljs-string">&quot;hello&quot;</span>     <span class="hljs-comment">// &quot;hello&quot;</span>
+implicitlyStr.uppercased()  <span class="hljs-comment">// =&gt; &quot;HELLO&quot;</span></code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grammar.html" class="navigation navigation-prev " aria-label="Previous page: Swiftの文法①基本">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="calc.html" class="navigation navigation-next " aria-label="Next page: iOSアプリチュートリアル①電卓アプリ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Swiftの文法②Optional","level":"1.4","depth":1,"next":{"title":"iOSアプリチュートリアル①電卓アプリ","level":"1.5","depth":1,"path":"docs/calc.md","ref":"docs/calc.md","articles":[]},"previous":{"title":"Swiftの文法①基本","level":"1.3","depth":1,"path":"docs/grammar.md","ref":"docs/grammar.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/optional.md","mtime":"2018-10-24T09:14:02.011Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2018-10-24T08:33:13.005Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
